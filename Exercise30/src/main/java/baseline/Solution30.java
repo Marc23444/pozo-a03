@@ -14,14 +14,22 @@ public class Solution30 {
 
     //Calls output
     public static void main(String[] args) {
-
+        output();
     }
 
     //Will display the table evenly spaced
     private static void output()
     {
         //This function will use a nested for loop
+        for(int i = 1; i <= 12;i++)
+        {
+            for(int j = 1; j <=12;j++)
+            {
+                System.out.printf("%15d",i*j);
 
+            }
+            System.out.print("\n");
+        }
 
     }
 }
