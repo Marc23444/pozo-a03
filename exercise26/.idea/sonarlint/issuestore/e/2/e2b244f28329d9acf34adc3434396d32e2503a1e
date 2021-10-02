@@ -1,0 +1,8 @@
+
+7
+java:S1659"!Declare "APR" on a separate line.(ŸÌ¸ˆ
+B
+java:S1659",Declare "monthlyPayment" on a separate line.(ŸÌ¸ˆ
+=
+java:S1659"'Declare "totMonths" on a separate line.(ŸÌ¸ˆ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŸÌ¸ˆ
