@@ -13,30 +13,74 @@
 
 package baseline;
 
+import java.util.Scanner;
+
 public class Solution31 {
 
     //Driver function, runs input
     public static void main(String[] args) {
-
+        input();
     }
 
     //Takes in input using a scanner, makes sure that input is valid
     private static void input()
     {
+        //Creates a scanner, uses a while loop to check input
+        Scanner in = new Scanner(System.in);
+        double age = 0, restingHR = 0;
+        boolean validInput = false;
+
+        while(!validInput)
+        {
+
+            try{
+                System.out.println("Whats your age?");
+                age = Integer.parseInt(in.nextLine());
+
+                System.out.println("Whats your resting Heart Rate?");
+                restingHR = Integer.parseInt(in.nextLine());
+
+                if(age >= 0 && restingHR >= 0)
+                {
+                    validInput = true;
+                }
+                else
+                {
+                    System.out.println("Please enter a valid input.");
+
+                }
+            }
+            catch(Exception e)
+            {
+                System.out.println("Please enter a valid input.");
+            }
+        }
+
+        output(age,restingHR);
 
     }
 
     //Takes in age and heart rate once they've been validated, displays the output
-    private static void output(int age, int HR)
+    private static void output(double age, double restingHR)
     {
-        //Output will be displayed in a while loop, calcHR will be used to calculate the heart rate at each intensity.
+        System.out.println("Resting Pulse: "+ restingHR+"\tAge: "+age);
+        System.out.println("Intensity\t | Rate");
+        System.out.println("-------------|--------");
+
+        for(double i = 55; i <=95; i+=5)
+        {
+            System.out.println(i+"%\t\t | "+calcHR(age,restingHR,(i / 100))+" bpm");
+        }
 
     }
 
     //Used to calculate heart rate at each intensity
-    private static int calcHR(int age, int HR, int intensity)
+    private static int calcHR(double age, double restingHR, double intensity)
     {
         //Uses the formula: TargetHeartRate = (((220 − age) − restingHR) × intensity) + restingHR
+
+
+        return  (int) (restingHR + (((220.0 - age) - restingHR) * intensity));
     }
 
 }
