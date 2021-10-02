@@ -5,23 +5,63 @@
 /*
     PSUEDOCODE
     -Create an input method, this method will use a scanner to take in input.
-    -Create a string array full of 5 employ names, then create a temp array of size n-1.
-    -This array will be set after the name to remove has been decided
-    -Once the temp array has been fully set, display it.
+    -Create a string array full of 5 employee names
+    -Display all the names
+    -Ask the user for a name to remove
+    -Since the array of names is an arrayList we can remove the name when we encounter it in the list
+    -Finally we can display the updated list
 
  */
 package baseline;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Solution34 {
     //Driver function, will run input().
     public static void main(String[] args) {
-
+        input();
     }
 
     //Creates an array of strings and removes a specified value from that array.
     private static void input()
     {
         //This function uses a for loop to remove the chosen value
+        Scanner in = new Scanner(System.in);
+        ArrayList<String> names = new ArrayList<>();
+        names.add("John Smith");
+        names.add("Jackie Jackson");
+        names.add("Chris Jones");
+        names.add("Amanda Cullen");
+        names.add("Jeremy Goodwin");
+
+        String input;
+
+        System.out.println("There are "+names.size()+" employees:");
+        for(int i = 0; i < 5; i++)
+        {
+            System.out.println(names.get(i));
+        }
+
+        System.out.println("Enter an employee name to remove:");
+        input = in.nextLine();
+
+        for(int i = 0; i < 5; i++)
+        {
+            if(names.get(i).equals(input))
+            {
+                names.remove(i);
+                break;
+            }
+        }
+
+        System.out.println("There are "+names.size()+" employees:");
+        for(int i = 0; i <names.size(); i++)
+        {
+            System.out.println(names.get(i));
+
+        }
 
     }
+
 }
