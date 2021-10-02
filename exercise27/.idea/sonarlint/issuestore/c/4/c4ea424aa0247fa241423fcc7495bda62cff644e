@@ -1,0 +1,14 @@
+
+p
+java:S3776ƒ"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(»Ζφά8»Δ•Δ/
+Q
+java:S1854 "5Remove this useless assignment to local variable "d".(ε‚®λύÿÿÿÿ
+B
+java:S1481 "&Remove this unused "d" local variable.(ε‚®λύÿÿÿÿ
+M
+java:S1066‰"/Merge this if statement with the enclosing one.(‡Άέ8ΏΔ•Δ/
+M
+java:S1066‹"/Merge this if statement with the enclosing one.(†£ΖΆ8ΏΔ•Δ/
+k	java:S117%"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ•Ζώÿÿÿÿ
+k	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ΫÒ‘ωÿÿÿÿ
+g	java:S117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»Ζφά
