@@ -16,22 +16,78 @@
  */
 package baseline;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Solution37 {
     //Driver method, calls input
     public static void main(String[] args) {
-
+        input();
     }
 
     //Takes in user input with a scanner, calls generatePass
     private static void input()
     {
+        Scanner in = new Scanner(System.in);
+        int length;
+        int special;
+        int numbers;
+
+        //These 3 println's prompt for user input
+        System.out.println("What's the minimum length?");
+        length = Integer.parseInt(in.nextLine());
+
+        System.out.println("How many special characters?");
+        special = Integer.parseInt(in.nextLine());
+
+        System.out.println("How many numbers?");
+        numbers = Integer.parseInt(in.nextLine());
+
+
+        System.out.println("Your password is "+generatePass(length,special,numbers));
+
 
     }
 
     //Generates the password using the rand class
     private static String generatePass(int length, int special,int numbers)
     {
+        //Character lists
+        char[] specialCharacterList = {'!','@','#','$','%','^','&','*','?','>','<','.','=','+'};
+        char[] letterList = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        char[] numberList = {'0','1','2','3','4','5','6','7','8','9'};
 
+        String password = "";
+        Random rand = new Random();
+        int randNumber;
+
+        //Adds in the letters first
+        for(int i = 0; i < length - (special+numbers);i++)
+        {
+            randNumber = rand.nextInt(27);
+            password = password + letterList[randNumber];
+        }
+
+        //Then the special characters are added
+        for (int i = 0; i < special;i++)
+        {
+            randNumber = rand.nextInt(specialCharacterList.length);
+
+            password = password + specialCharacterList[randNumber];
+
+        }
+
+        //Finally the numbers are added
+        for (int i = 0; i < numbers;i++)
+        {
+            randNumber = rand.nextInt(numberList.length);
+
+            password = password + numberList[randNumber];
+
+        }
+
+
+        return password;
     }
 
 }
